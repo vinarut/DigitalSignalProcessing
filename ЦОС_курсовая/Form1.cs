@@ -16,6 +16,7 @@ namespace ЦОС_курсовая
         {
             InitializeComponent();
         }
+
         //=====================//
         // Вариант 1
         //=====================//
@@ -66,5 +67,41 @@ namespace ЦОС_курсовая
         static double B_t = f_a - f_p;
         static double fc = f_p + B_t / 2;
         //==//1//==============//
+
+        //==//2//==============//
+        static double A = -20 * Math.Log10(delta);
+        static double D = find_D(A);
+        static double alpha = find_alpha(A);
+        static double Fs = 128;
+        
+        static double find_D(double A)
+        {
+            if (A <= 21)
+                return 0.9222;
+            else
+                return (A - 7.95) / 14.36;
+        }
+
+        static double find_alpha(double A)
+        {
+            if (A <= 21)
+                return 0;
+            else if (A <= 50)
+                return 0.5842 * Math.Pow(A - 21, 0.4) + 0.07886 * (A - 21);
+            else
+                return 0.1102 * (A - 8.7);            
+        }
+
+        static double round_M(double M)
+        {
+            if (M >= Math.Floor(M) + 0.5)
+                return Math.Floor(M) + 1;
+            else
+                return Math.Floor(M);
+        }
+
+        static double M = round_M(Fs * D / B_t);
+        static double N = M + 1;
+        //=====================//
     }
 }
