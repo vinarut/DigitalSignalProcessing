@@ -126,5 +126,32 @@ namespace ЦОС_курсовая
             return a;
         }
         //=====================//
+
+        //==//4//==============//
+        static double[] a_k = a_Kaiser((int)M);
+        static double[] a_Kaiser(int M)
+        {
+            double[] a_k = new double[M / 2 + 1];
+            for (int i = 0; i < a_k.Length; i++)
+            {
+                double beta = alpha * Math.Sqrt(1 - Math.Pow(2 * i / M, 2));
+                double w = I0(beta) / I0(alpha);
+                a_k[i] = a[i] * w; 
+            }
+            return a_k;
+        }
+        static double I0(double x) 
+        {   
+            double I = 1;
+            for (int k = 1; k <= 10; k++)
+                I += Math.Pow(Math.Pow(x / 2, k) / factorial(k), 2);
+            return I;
+        }
+        static double factorial(int p)
+        {
+            for (int i = p - 1; i >= 1; i--)
+                p *= i;
+            return p;
+        }
     }
 }
