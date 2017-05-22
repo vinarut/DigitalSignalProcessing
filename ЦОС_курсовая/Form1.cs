@@ -65,7 +65,7 @@ namespace ЦОС_курсовая
         static double delta = Math.Min(delta_1, delta_2);
         //=====================//
         static double B_t = f_a - f_p;
-        static double fc = f_p + B_t / 2;
+        static double f_c = f_p + B_t / 2;
         //==//1//==============//
 
         //==//2//==============//
@@ -105,21 +105,25 @@ namespace ЦОС_курсовая
         //=====================//
 
         //==//3//==============//
-        static double[] a = new double[(int)M / 2 + 1];
+        static double[] a = coef_Furie((int)M);
 
-        static void coef_Furie()
+        static double[] coef_Furie(int M)
         {
+            double[] a = new double[M / 2 + 1];
+
             if (M % 2 == 0)
             {
-                a[0] = 2 * fc / Fs;
+                a[0] = 2 * f_c / Fs;
                 for (int i = 1; i < a.Length; i++)
-                    a[i] = Math.Sin(2 * Math.PI * i * fc / Fs) / (Math.PI * i);
+                    a[i] = Math.Sin(2 * Math.PI * i * f_c / Fs) / (Math.PI * i);                
             }
             else
             {
                 for (int i = 0; i < a.Length; i++)
-                    a[i] = Math.Sin(2 * Math.PI * (i - 0.5) * fc / Fs) / (Math.PI * (i - 0.5));
+                    a[i] = Math.Sin(2 * Math.PI * (i - 0.5) * f_c / Fs) / (Math.PI * (i - 0.5));
             }
+
+            return a;
         }
         //=====================//
     }
