@@ -57,6 +57,14 @@ namespace ЦОС_курсовая
         //static int f4 = 12; // Гц
         //static int f5 = 50; // Гц
         //=====================//
-
+        
+        //==//1//===Для ФНЧ====//
+        static double delta_1 = (Math.Pow(10, 0.05 * A_p) - 1) / (Math.Pow(10, 0.05 * A_p) + 1);
+        static double delta_2 = Math.Pow(10, -0.05 * A_a);
+        static double delta = Math.Min(delta_1, delta_2);
+        //=====================//
+        static double B_t = f_a - f_p;
+        static double fc = f_p + B_t / 2;
+        //==//1//==============//
     }
 }
