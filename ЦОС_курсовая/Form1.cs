@@ -103,5 +103,24 @@ namespace ЦОС_курсовая
         static double M = round_M(Fs * D / B_t);
         static double N = M + 1;
         //=====================//
+
+        //==//3//==============//
+        static double[] a = new double[(int)M / 2 + 1];
+
+        static void coef_Furie()
+        {
+            if (M % 2 == 0)
+            {
+                a[0] = 2 * fc / Fs;
+                for (int i = 1; i < a.Length; i++)
+                    a[i] = Math.Sin(2 * Math.PI * i * fc / Fs) / (Math.PI * i);
+            }
+            else
+            {
+                for (int i = 0; i < a.Length; i++)
+                    a[i] = Math.Sin(2 * Math.PI * (i - 0.5) * fc / Fs) / (Math.PI * (i - 0.5));
+            }
+        }
+        //=====================//
     }
 }
