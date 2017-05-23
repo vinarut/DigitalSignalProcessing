@@ -153,5 +153,24 @@ namespace ЦОС_курсовая
                 p *= i;
             return p;
         }
+        //=====================//
+
+        //==//5//==============//
+        static double[] h = find_h((int)M);
+
+        static double[] find_h(int M)
+        {
+            h = new double[M];
+            for (int i = 0; i <= M / 2 - 1; i++)
+                h[i] = a_k[M / 2 - i];
+
+            h[M / 2] = a_k[0];
+
+            for (int i = M / 2 + 1; i < M; i++)
+                h[i] = h[M - i];
+
+            return h;
+        }
+        //=====================//
     }
 }
