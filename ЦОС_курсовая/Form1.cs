@@ -15,6 +15,9 @@ namespace ЦОС_курсовая
         public Form1()
         {
             InitializeComponent();
+            Hw2();
+            //for (int i = 0; i < H_w.Length; i++)
+            //    chart1.Series[0].Points.AddXY(i + 1, H_w[i]);
         }
 
         //=====================//
@@ -72,7 +75,7 @@ namespace ЦОС_курсовая
         static double A = -20 * Math.Log10(delta);
         static double D = find_D(A);
         static double alpha = find_alpha(A);
-        static double Fs = 128;
+        static int Fs = 128;
         
         static double find_D(double A)
         {
@@ -172,5 +175,45 @@ namespace ЦОС_курсовая
             return h;
         }
         //=====================//
+
+        //==//6//==============//
+        static double[] H_w = Hw((int)M);
+        static double[] Hw(int M)
+        {
+            double[] H = new double[f_p + 1];
+            double Re, Im;
+
+            for (int w = 0; w < H.Length; w++)
+            {
+                Re = 0;
+                Im = 0;
+                for (int n = 1; n <= M; n++)
+                {
+                    Re += h[n - 1] * Math.Cos(n * w);
+                    Im += h[n - 1] * Math.Sin(n * w);
+                    
+                }
+                H[w] = Math.Sqrt(Re * Re + Im * Im);
+            }
+            return H;
+        }
+        void Hw2()
+        {
+            double[] H = new double[f_p + 1];
+            double Re, Im;
+
+            for (double w = 0; w < f_p; w+=0.1)
+            {
+                Re = 0;
+                Im = 0;
+                for (int n = 1; n <= M; n++)
+                {
+                    Re += h[n - 1] * Math.Cos(n * w);
+                    Im += h[n - 1] * Math.Sin(n * w);
+
+                }
+                chart1.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
+            }
+        }
     }
 }
