@@ -15,9 +15,14 @@ namespace ЦОС_курсовая
         public Form1()
         {
             InitializeComponent();
-            Hw2();
-            //for (int i = 0; i < H_w.Length; i++)
-            //    chart1.Series[0].Points.AddXY(i + 1, H_w[i]);
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+            chart1.ChartAreas[0].AxisX.Maximum = 1;
+
+            //Hw2();
+            for (int i = 0; i < F_disk.Length; i++)
+                chart1.Series[0].Points.AddXY(i * T_d, F_disk[i]);
+            //for (double i = 0; i <= 1; i+=0.01)
+            //    chart1.Series[0].Points.AddXY(i, F(i));
         }
 
         //=====================//
@@ -214,6 +219,30 @@ namespace ЦОС_курсовая
                 }
                 chart1.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
             }
+        }
+        //=====================//
+
+        //==//Дискретизация//==//
+        static double T = 1;
+        static double T_d = 1.0 / Fs;
+        static double N_d = 1 + T / T_d;
+        static double[] F_disk = diskret();
+
+        static double F(double t)
+        {
+            return Math.Cos(t * f1 * 2 * Math.PI) + Math.Cos(t * f2 * 2 * Math.PI) + Math.Cos(t * f3 * 2 * Math.PI) + Math.Cos(t * f4 * 2 * Math.PI) + Math.Cos(t * f5 * 2 * Math.PI);
+        }
+
+        static double[] diskret()
+        {
+            //double[] array = new double[(int)N];
+            double[] array = new double[129];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = F(i * T_d);
+            }
+
+            return array;
         }
     }
 }
