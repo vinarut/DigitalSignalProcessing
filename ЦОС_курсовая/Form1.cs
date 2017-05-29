@@ -265,14 +265,14 @@ namespace ЦОС_курсовая
                 {   
                     Skv = 0;
                     do { Skv += delta_kvant; }
-                    while (Math.Abs(Skv - F_disk[i]) > delta / 2);
+                    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
                     array[i] = Skv;
                 }
                 if(F_disk[i] < 0)
                 {
                     Skv = 0;
                     do { Skv -= delta_kvant; }
-                    while (Math.Abs(Skv - F_disk[i]) > delta / 2);
+                    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
                     array[i] = Skv;
                 }
             }
