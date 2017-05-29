@@ -16,13 +16,17 @@ namespace ЦОС_курсовая
         {
             InitializeComponent();
             chart1.ChartAreas[0].AxisX.Minimum = 0;
-            chart1.ChartAreas[0].AxisX.Maximum = 1;
+            //chart1.ChartAreas[0].AxisX.Maximum = 1;
+            chart2.ChartAreas[0].AxisX.Minimum = 0;
 
             //Hw2();
             for (int i = 0; i < F_disk.Length; i++)
-                chart1.Series[0].Points.AddXY(i * T_d, F_disk[i]);
-            //for (double i = 0; i <= 1; i+=0.01)
+                chart2.Series[0].Points.AddXY(i, F_disk[i]);
+            for (int i = 0; i < F_kvant.Length; i++)
+                chart1.Series[0].Points.AddXY(i, F_kvant[i]);
+            //for (double i = 0; i <= 1; i += 0.01)
             //    chart1.Series[0].Points.AddXY(i, F(i));
+
         }
 
         //=====================//
@@ -226,17 +230,17 @@ namespace ЦОС_курсовая
         static double T = 1;
         static double T_d = 1.0 / Fs;
         static double N_d = 1 + T / T_d;
-        static double[] F_disk = diskret();
+        static double[] F_disk = diskret((int)N_d);
 
         static double F(double t)
         {
             return Math.Cos(t * f1 * 2 * Math.PI) + Math.Cos(t * f2 * 2 * Math.PI) + Math.Cos(t * f3 * 2 * Math.PI) + Math.Cos(t * f4 * 2 * Math.PI) + Math.Cos(t * f5 * 2 * Math.PI);
         }
 
-        static double[] diskret()
+        static double[] diskret(int N)
         {
-            //double[] array = new double[(int)N];
-            double[] array = new double[129];
+            double[] array = new double[N - 1];
+            //double[] array = new double[129];
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = F(i * T_d);
@@ -244,5 +248,53 @@ namespace ЦОС_курсовая
 
             return array;
         }
+        //=====================//
+
+        //==//Квантование//===//
+        static double delta_kvant = (Smax() - Smin()) / 63;
+        static double[] F_kvant = kvant((int)N_d);
+        static double[] kvant(int N)
+        {
+            double[] array = new double[N - 1];
+            double Skv = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (F_disk[i] == 0)
+                    array[i] = F_disk[i];
+                if (F_disk[i] > 0)
+                {   
+                    Skv = 0;
+                    do { Skv += delta_kvant; }
+                    while (Math.Abs(Skv - F_disk[i]) > delta / 2);
+                    array[i] = Skv;
+                }
+                if(F_disk[i] < 0)
+                {
+                    Skv = 0;
+                    do { Skv -= delta_kvant; }
+                    while (Math.Abs(Skv - F_disk[i]) > delta / 2);
+                    array[i] = Skv;
+                }
+            }
+            return array;
+        }
+        static double Smax()
+        {
+            double max = F_disk[0];
+            for (int i = 1; i < F_disk.Length; i++)
+                if (F_disk[i] > max)
+                    max = F_disk[i];
+
+            return max;
+        }
+        static double Smin()
+        {
+            double min = F_disk[0];
+            for (int i = 1; i < F_disk.Length; i++)
+                if (F_disk[i] < min)
+                    min = F_disk[i];
+
+            return min;
+        } 
     }
 }
