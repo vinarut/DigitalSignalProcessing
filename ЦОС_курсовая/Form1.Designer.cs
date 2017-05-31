@@ -30,8 +30,10 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -50,6 +52,10 @@
             this.chart1.Size = new System.Drawing.Size(446, 300);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            title1.Text = "Дискретный сигнал";
+            this.chart1.Titles.Add(title1);
             // 
             // chart2
             // 
@@ -63,6 +69,10 @@
             this.chart2.Size = new System.Drawing.Size(446, 300);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title2.Name = "Title1";
+            title2.Text = "Квантованный сигнал";
+            this.chart2.Titles.Add(title2);
             // 
             // Form1
             // 

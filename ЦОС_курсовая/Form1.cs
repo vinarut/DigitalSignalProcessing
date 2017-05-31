@@ -256,25 +256,26 @@ namespace ЦОС_курсовая
         static double[] kvant(int N)
         {
             double[] array = new double[N - 1];
-            double Skv = 0;
+            //double Skv = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (F_disk[i] == 0)
-                    array[i] = F_disk[i];
-                if (F_disk[i] > 0)
-                {   
-                    Skv = 0;
-                    do { Skv += delta_kvant; }
-                    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
-                    array[i] = Skv;
-                }
-                if(F_disk[i] < 0)
-                {
-                    Skv = 0;
-                    do { Skv -= delta_kvant; }
-                    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
-                    array[i] = Skv;
-                }
+                array[i] = Math.Floor(F_disk[i] / delta_kvant) * delta_kvant;
+                //if (F_disk[i] == 0)
+                //    array[i] = F_disk[i];
+                //if (F_disk[i] > 0)
+                //{   
+                //    Skv = 0;
+                //    do { Skv += delta_kvant; }
+                //    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
+                //    array[i] = Skv;
+                //}
+                //if(F_disk[i] < 0)
+                //{
+                //    Skv = 0;
+                //    do { Skv -= delta_kvant; }
+                //    while (Math.Abs(Skv - F_disk[i]) > delta_kvant);
+                //    array[i] = Skv;
+                //}
             }
             return array;
         }
