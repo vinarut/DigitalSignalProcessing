@@ -316,6 +316,39 @@ namespace ЦОС_курсовая
             }
             return array;
         }
-        
+        //=====================//
+
+        //==//Окна//===========//
+
+        //Треугольное окно
+        static double[] triangle_win()
+        {
+            double[] a_t = new double[a.Length];
+            for (int i = 0; i < a_t.Length; i++)
+                a_t[i] = (1 - i / N) * a[i];
+
+            return a_t;
+        } 
+
+        //Окно Хэмминга
+        static double[] Hamm_win()
+        {
+            double[] a_h = new double[a.Length];
+            double alpha = 0.54;
+            for (int i = 0; i < a_h.Length; i++)
+                a_h[i] = (alpha - (1 - alpha) * Math.Cos(Math.PI * 2 * i / N)) * a[i];
+
+            return a_h;
+        }
+
+        //Окно Блэкмана
+        static double[] Black_win()
+        {
+            double[] a_b = new double[a.Length];
+            for (int i = 0; i < a_b.Length; i++)
+                a_b[i] = (0.42 - 0.5 * Math.Cos(Math.PI * 2 * i / N) + 0.08 * Math.Cos(Math.PI * 4 * i / N)) * a[i];
+
+            return a_b;
+        }
     }
 }
