@@ -18,6 +18,7 @@ namespace ЦОС_курсовая
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
             chart2.ChartAreas[0].AxisX.Minimum = 0;
+            chart3.ChartAreas[0].AxisX.Minimum = 0;
 
             //Hw2();
             for (int i = 0; i < F_disk.Length; i++)
@@ -26,7 +27,8 @@ namespace ЦОС_курсовая
                 chart1.Series[0].Points.AddXY(i, F_kvant[i]);
             //for (double i = 0; i <= 1; i += 0.01)
             //    chart1.Series[0].Points.AddXY(i, F(i));
-
+            for (int i = 0; i < F_disk.Length; i++)
+                chart3.Series[0].Points.AddXY(i, S_vyh[i]);
         }
 
         //=====================//
@@ -296,6 +298,23 @@ namespace ЦОС_курсовая
                     min = F_disk[i];
 
             return min;
-        } 
+        }
+        static double[] S_vyh = filtr((int)N_d);
+        static double[] filtr(int N)
+        {
+            double[] array = new double[N - 1];
+            double S = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                S = 0;
+                for(int k = 0; k <= i; k++)
+                {
+                    if (k < h.Length)
+                        S += F_kvant[i - k] * h[k];
+                }
+                array[i] = S;
+            }
+            return array;
+        }
     }
 }
