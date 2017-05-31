@@ -17,12 +17,12 @@ namespace ЦОС_курсовая
             InitializeComponent();
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
-            chart2.ChartAreas[0].AxisX.Minimum = 0;
+            //chart2.ChartAreas[0].AxisX.Minimum = 0;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
 
             //Hw2();
-            for (int i = 0; i < F_disk.Length; i++)
-                chart2.Series[0].Points.AddXY(i, F_disk[i]);
+            //for (int i = 0; i < F_disk.Length; i++)
+            //    chart2.Series[0].Points.AddXY(i, F_disk[i]);
             for (int i = 0; i < F_kvant.Length; i++)
                 chart1.Series[0].Points.AddXY(i, F_kvant[i]);
             //for (double i = 0; i <= 1; i += 0.01)
@@ -316,5 +316,6 @@ namespace ЦОС_курсовая
             }
             return array;
         }
+        
     }
 }
