@@ -20,15 +20,20 @@ namespace ЦОС_курсовая
             //chart2.ChartAreas[0].AxisX.Minimum = 0;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
 
-            //Hw2();
+
             //for (int i = 0; i < F_disk.Length; i++)
             //    chart2.Series[0].Points.AddXY(i, F_disk[i]);
             for (int i = 0; i < F_kvant.Length; i++)
-                chart1.Series[0].Points.AddXY(i, F_kvant[i]);
+                chart1.Series[0].Points.AddXY(i * T_d, F_kvant[i]);
             //for (double i = 0; i <= 1; i += 0.01)
             //    chart1.Series[0].Points.AddXY(i, F(i));
             for (int i = 0; i < F_disk.Length; i++)
-                chart3.Series[0].Points.AddXY(i, S_vyh[i]);
+                chart3.Series[0].Points.AddXY((double)i / Fs, S_vyh[i]);
+
+            Hw2();
+            Hw_triangle();
+            Hw_Ham();
+            Hw_Black();
         }
 
         //=====================//
@@ -106,15 +111,15 @@ namespace ЦОС_курсовая
                 return 0.1102 * (A - 8.7);            
         }
 
-        static double round_M(double M)
-        {
-            if (M >= Math.Floor(M) + 0.5)
-                return Math.Floor(M) + 1;
-            else
-                return Math.Floor(M);
-        }
+        //static double round_M(double M)
+        //{
+        //    if (M >= Math.Floor(M) + 0.5)
+        //        return Math.Floor(M) + 1;
+        //    else
+        //        return Math.Floor(M);
+        //}
 
-        static double M = round_M(Fs * D / B_t);
+        static double M = Math.Round(Fs * D / B_t);
         static double N = M + 1;
         //=====================//
 
@@ -170,9 +175,9 @@ namespace ЦОС_курсовая
         //=====================//
 
         //==//5//==============//
-        static double[] h = find_h((int)M);
+        static double[] h = find_h((int)M, a_k);
 
-        static double[] find_h(int M)
+        static double[] find_h(int M, double[] a_k)
         {
             h = new double[M];
             for (int i = 0; i <= M / 2 - 1; i++)
@@ -212,6 +217,7 @@ namespace ЦОС_курсовая
         {
             double[] H = new double[f_p + 1];
             double Re, Im;
+            chart_Kaiser.ChartAreas[0].AxisX.Minimum = 0;
 
             for (double w = 0; w < f_p; w+=0.1)
             {
@@ -223,7 +229,7 @@ namespace ЦОС_курсовая
                     Im += h[n - 1] * Math.Sin(n * w);
 
                 }
-                chart1.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
+                chart_Kaiser.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
             }
         }
         //=====================//
@@ -236,6 +242,7 @@ namespace ЦОС_курсовая
 
         static double F(double t)
         {
+            //return Math.Cos(t * f1 * 2 * Math.PI);
             return Math.Cos(t * f1 * 2 * Math.PI) + Math.Cos(t * f2 * 2 * Math.PI) + Math.Cos(t * f3 * 2 * Math.PI) + Math.Cos(t * f4 * 2 * Math.PI) + Math.Cos(t * f5 * 2 * Math.PI);
         }
 
@@ -304,15 +311,15 @@ namespace ЦОС_курсовая
         {
             double[] array = new double[N - 1];
             double S = 0;
-            for (int i = 0; i < array.Length; i++)
+            for (int k = 0; k < array.Length; k++)
             {
                 S = 0;
-                for(int k = 0; k <= i; k++)
+                for(int i = 0; i <= k; i++)
                 {
-                    if (k < h.Length)
-                        S += F_kvant[i - k] * h[k];
+                    if (k - i < h.Length)
+                        S += F_kvant[i] * h[k - i];
                 }
-                array[i] = S;
+                array[k] = S;
             }
             return array;
         }
@@ -328,8 +335,26 @@ namespace ЦОС_курсовая
                 a_t[i] = (1 - i / N) * a[i];
 
             return a_t;
-        } 
+        }
+        void Hw_triangle()
+        {
+            double[] h = find_h((int)M, triangle_win());
+            chart_triangle.ChartAreas[0].AxisX.Minimum = 0;
+            double Re, Im;
 
+            for (double w = 0; w < f_p; w += 0.1)
+            {
+                Re = 0;
+                Im = 0;
+                for (int n = 1; n <= M; n++)
+                {
+                    Re += h[n - 1] * Math.Cos(n * w);
+                    Im += h[n - 1] * Math.Sin(n * w);
+
+                }
+                chart_triangle.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
+            }
+        }
         //Окно Хэмминга
         static double[] Hamm_win()
         {
@@ -340,7 +365,25 @@ namespace ЦОС_курсовая
 
             return a_h;
         }
+        void Hw_Ham()
+        {
+            double[] h = find_h((int)M, Hamm_win());
+            chart_Ham.ChartAreas[0].AxisX.Minimum = 0;
+            double Re, Im;
 
+            for (double w = 0; w < f_p; w += 0.1)
+            {
+                Re = 0;
+                Im = 0;
+                for (int n = 1; n <= M; n++)
+                {
+                    Re += h[n - 1] * Math.Cos(n * w);
+                    Im += h[n - 1] * Math.Sin(n * w);
+
+                }
+                chart_Ham.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
+            }
+        }
         //Окно Блэкмана
         static double[] Black_win()
         {
@@ -349,6 +392,25 @@ namespace ЦОС_курсовая
                 a_b[i] = (0.42 - 0.5 * Math.Cos(Math.PI * 2 * i / N) + 0.08 * Math.Cos(Math.PI * 4 * i / N)) * a[i];
 
             return a_b;
+        }
+        void Hw_Black()
+        {
+            double[] h = find_h((int)M, Black_win());
+            chart_Black.ChartAreas[0].AxisX.Minimum = 0;
+            double Re, Im;
+
+            for (double w = 0; w < f_p; w += 0.1)
+            {
+                Re = 0;
+                Im = 0;
+                for (int n = 1; n <= M; n++)
+                {
+                    Re += h[n - 1] * Math.Cos(n * w);
+                    Im += h[n - 1] * Math.Sin(n * w);
+
+                }
+                chart_Black.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
+            }
         }
     }
 }
