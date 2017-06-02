@@ -34,9 +34,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
@@ -49,6 +46,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -65,6 +68,8 @@
             this.chart_Ham = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.chart_Black = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.chart_analog = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -81,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart_Ham)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Black)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_analog)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -125,6 +132,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage7);
@@ -169,21 +177,21 @@
             // 
             // chart_vosst
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart_vosst.ChartAreas.Add(chartArea3);
+            chartArea4.Name = "ChartArea1";
+            this.chart_vosst.ChartAreas.Add(chartArea4);
             this.chart_vosst.Location = new System.Drawing.Point(0, 0);
             this.chart_vosst.Name = "chart_vosst";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Name = "Series1";
-            this.chart_vosst.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Name = "Series1";
+            this.chart_vosst.Series.Add(series4);
             this.chart_vosst.Size = new System.Drawing.Size(518, 342);
             this.chart_vosst.TabIndex = 0;
             this.chart_vosst.Text = "chart2";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title3.Name = "Title1";
-            title3.Text = "Восстановленный сигнал";
-            this.chart_vosst.Titles.Add(title3);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title4.Name = "Title1";
+            title4.Text = "Восстановленный сигнал";
+            this.chart_vosst.Titles.Add(title4);
             // 
             // tabControl2
             // 
@@ -213,21 +221,21 @@
             this.chart_Kaiser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea4.Name = "ChartArea1";
-            this.chart_Kaiser.ChartAreas.Add(chartArea4);
+            chartArea5.Name = "ChartArea1";
+            this.chart_Kaiser.ChartAreas.Add(chartArea5);
             this.chart_Kaiser.Location = new System.Drawing.Point(0, 0);
             this.chart_Kaiser.Name = "chart_Kaiser";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Name = "Series1";
-            this.chart_Kaiser.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Name = "Series1";
+            this.chart_Kaiser.Series.Add(series5);
             this.chart_Kaiser.Size = new System.Drawing.Size(514, 342);
             this.chart_Kaiser.TabIndex = 0;
             this.chart_Kaiser.Text = "chart2";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title4.Name = "Title1";
-            title4.Text = "АЧХ фильтра с окном Кайзера";
-            this.chart_Kaiser.Titles.Add(title4);
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title5.Name = "Title1";
+            title5.Text = "АЧХ фильтра с окном Кайзера";
+            this.chart_Kaiser.Titles.Add(title5);
             // 
             // tabPage4
             // 
@@ -245,21 +253,21 @@
             this.chart_triangle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.chart_triangle.ChartAreas.Add(chartArea5);
+            chartArea6.Name = "ChartArea1";
+            this.chart_triangle.ChartAreas.Add(chartArea6);
             this.chart_triangle.Location = new System.Drawing.Point(0, 0);
             this.chart_triangle.Name = "chart_triangle";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Name = "Series1";
-            this.chart_triangle.Series.Add(series5);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Name = "Series1";
+            this.chart_triangle.Series.Add(series6);
             this.chart_triangle.Size = new System.Drawing.Size(514, 342);
             this.chart_triangle.TabIndex = 2;
             this.chart_triangle.Text = "chart4";
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title5.Name = "Title1";
-            title5.Text = "АЧХ фильтра с треугольным окном";
-            this.chart_triangle.Titles.Add(title5);
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title6.Name = "Title1";
+            title6.Text = "АЧХ фильтра с треугольным окном";
+            this.chart_triangle.Titles.Add(title6);
             // 
             // tabPage5
             // 
@@ -277,21 +285,21 @@
             this.chart_Ham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea6.Name = "ChartArea1";
-            this.chart_Ham.ChartAreas.Add(chartArea6);
+            chartArea7.Name = "ChartArea1";
+            this.chart_Ham.ChartAreas.Add(chartArea7);
             this.chart_Ham.Location = new System.Drawing.Point(-2, 0);
             this.chart_Ham.Name = "chart_Ham";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Name = "Series1";
-            this.chart_Ham.Series.Add(series6);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Name = "Series1";
+            this.chart_Ham.Series.Add(series7);
             this.chart_Ham.Size = new System.Drawing.Size(514, 342);
             this.chart_Ham.TabIndex = 3;
             this.chart_Ham.Text = "chart5";
-            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title6.Name = "Title1";
-            title6.Text = "АЧХ фильтра с окном Хэмминга";
-            this.chart_Ham.Titles.Add(title6);
+            title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title7.Name = "Title1";
+            title7.Text = "АЧХ фильтра с окном Хэмминга";
+            this.chart_Ham.Titles.Add(title7);
             // 
             // tabPage6
             // 
@@ -309,21 +317,50 @@
             this.chart_Black.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea7.Name = "ChartArea1";
-            this.chart_Black.ChartAreas.Add(chartArea7);
+            chartArea8.Name = "ChartArea1";
+            this.chart_Black.ChartAreas.Add(chartArea8);
             this.chart_Black.Location = new System.Drawing.Point(-2, 0);
             this.chart_Black.Name = "chart_Black";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Name = "Series1";
-            this.chart_Black.Series.Add(series7);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Name = "Series1";
+            this.chart_Black.Series.Add(series8);
             this.chart_Black.Size = new System.Drawing.Size(514, 342);
             this.chart_Black.TabIndex = 3;
             this.chart_Black.Text = "chart6";
-            title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title7.Name = "Title1";
-            title7.Text = "АЧХ фильтра с окном Блэкмана";
-            this.chart_Black.Titles.Add(title7);
+            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title8.Name = "Title1";
+            title8.Text = "АЧХ фильтра с окном Блэкмана";
+            this.chart_Black.Titles.Add(title8);
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.chart_analog);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(518, 342);
+            this.tabPage8.TabIndex = 3;
+            this.tabPage8.Text = "Аналоговый сигнал";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // chart_analog
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart_analog.ChartAreas.Add(chartArea3);
+            this.chart_analog.Location = new System.Drawing.Point(8, 8);
+            this.chart_analog.Name = "chart_analog";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Name = "Series1";
+            this.chart_analog.Series.Add(series3);
+            this.chart_analog.Size = new System.Drawing.Size(518, 342);
+            this.chart_analog.TabIndex = 1;
+            this.chart_analog.Text = "chart2";
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title3.Name = "Title1";
+            title3.Text = "Аналоговый сигнал";
+            this.chart_analog.Titles.Add(title3);
             // 
             // Form1
             // 
@@ -351,6 +388,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart_Ham)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_Black)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_analog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +412,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Black;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_vosst;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_analog;
     }
 }
 

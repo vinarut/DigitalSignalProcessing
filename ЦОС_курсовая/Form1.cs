@@ -18,12 +18,12 @@ namespace ЦОС_курсовая
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
-
+            chart_analog.ChartAreas[0].AxisX.Minimum = 0;
 
             for (int i = 0; i < F_kvant.Length; i++)
                 chart1.Series[0].Points.AddXY(i * T_d, F_kvant[i]);
-            //for (double i = 0; i <= 1; i += 0.01)
-            //    chart1.Series[0].Points.AddXY(i, F(i));
+            for (double i = 0; i <= 1; i += 0.01)
+                chart_analog.Series[0].Points.AddXY(i, F(i));
             for (int i = 0; i < F_disk.Length; i++)
                 chart3.Series[0].Points.AddXY((double)i / Fs, S_vyh[i]);
 
