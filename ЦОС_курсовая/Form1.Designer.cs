@@ -164,7 +164,7 @@
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(518, 342);
             this.tabPage7.TabIndex = 2;
-            this.tabPage7.Text = "Аналоговый сигнал";
+            this.tabPage7.Text = "Восстановленный сигнал";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // chart2
@@ -182,7 +182,7 @@
             this.chart2.Text = "chart2";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title3.Name = "Title1";
-            title3.Text = "Аналоговый сигнал";
+            title3.Text = "Восстановленный сигнал";
             this.chart2.Titles.Add(title3);
             // 
             // tabControl2

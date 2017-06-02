@@ -22,7 +22,7 @@ namespace ЦОС_курсовая
 
 
             for (int i = 0; i < x_t.Length; i++)
-                chart2.Series[0].Points.AddXY(i, x_t[i]);
+                chart2.Series[0].Points.AddXY(i * T_d, x_t[i]);
 
             for (int i = 0; i < F_kvant.Length; i++)
                 chart1.Series[0].Points.AddXY(i * T_d, F_kvant[i]);
@@ -413,7 +413,9 @@ namespace ЦОС_курсовая
                 chart_Black.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
             }
         }
+        //=====================//
 
+        //=//Восстановление//==//
         static double[] C = find_C((int)N_d);
         static double[] Re;
         static double[] Im;
