@@ -17,12 +17,13 @@ namespace ЦОС_курсовая
             InitializeComponent();
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
-            //chart2.ChartAreas[0].AxisX.Minimum = 0;
+            chart2.ChartAreas[0].AxisX.Minimum = 0;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
 
 
-            //for (int i = 0; i < F_disk.Length; i++)
-            //    chart2.Series[0].Points.AddXY(i, F_disk[i]);
+            for (int i = 0; i < x_t.Length; i++)
+                chart2.Series[0].Points.AddXY(i, x_t[i]);
+
             for (int i = 0; i < F_kvant.Length; i++)
                 chart1.Series[0].Points.AddXY(i * T_d, F_kvant[i]);
             //for (double i = 0; i <= 1; i += 0.01)
@@ -411,6 +412,67 @@ namespace ЦОС_курсовая
                 }
                 chart_Black.Series[0].Points.AddXY(w, Math.Sqrt(Re * Re + Im * Im));
             }
+        }
+
+        static double[] C = find_C((int)N_d);
+        static double[] Re;
+        static double[] Im;
+        static double[] find_C(int N)
+        {
+            C = new double[N - 1];
+            Re = new double[C.Length];
+            Im = new double[C.Length];
+            double sum;
+
+            for(int i = 0; i < C.Length; i++)
+            {
+                C[i] = 1 / (double)N;
+                sum = 0;
+
+                for(int k = 0; k < C.Length; k++)
+                {
+                    Re[k] = Math.Cos(2 * Math.PI * i * k / N);
+                    Im[k] = Math.Sin(2 * Math.PI * i * k / N);
+
+                    sum += F_kvant[k] * (Re[k] - Im[k]);
+                }
+
+                C[i] *= sum;
+            }
+
+            return C;
+        }
+
+        static double[] x_t = find_xt((int)N_d);
+
+        static double[] find_xt(int N)
+        {
+            x_t = new double[N - 1];
+            double Ci;
+            double coef = 2;
+            int k = x_t.Length / 2 - 1;
+            x_t[0] = C[0];
+
+            for (int t = 1; t < x_t.Length / 2; t++)
+            {
+
+                Ci = Math.Sqrt(Math.Pow(Re[t], 2) + Math.Pow(Im[t], 2));
+
+                if (x_t.Length - t > 1)
+                    x_t[t] = 2 * Ci * Math.Cos(coef * Math.PI * t / T + Math.Atan(Im[t] / Re[t]));
+                else
+                    x_t[t] = Ci * Math.Cos(coef * Math.PI * t / T + Math.Atan(Im[t] / Re[t]));
+
+                coef += 2;                
+            }
+
+            for (int i = x_t.Length / 2; i < x_t.Length; i++)
+            {
+                x_t[i] = x_t[k];
+                k--;
+            }
+
+            return x_t;
         }
     }
 }
