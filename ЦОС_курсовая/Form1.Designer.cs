@@ -55,7 +55,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_vosst = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chart_Kaiser = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -71,7 +71,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_vosst)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Kaiser)).BeginInit();
@@ -158,7 +158,7 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.chart2);
+            this.tabPage7.Controls.Add(this.chart_vosst);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -167,23 +167,23 @@
             this.tabPage7.Text = "Восстановленный сигнал";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // chart2
+            // chart_vosst
             // 
             chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            this.chart2.Location = new System.Drawing.Point(0, 0);
-            this.chart2.Name = "chart2";
+            this.chart_vosst.ChartAreas.Add(chartArea3);
+            this.chart_vosst.Location = new System.Drawing.Point(0, 0);
+            this.chart_vosst.Name = "chart_vosst";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Name = "Series1";
-            this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(518, 342);
-            this.chart2.TabIndex = 0;
-            this.chart2.Text = "chart2";
+            this.chart_vosst.Series.Add(series3);
+            this.chart_vosst.Size = new System.Drawing.Size(518, 342);
+            this.chart_vosst.TabIndex = 0;
+            this.chart_vosst.Text = "chart2";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title3.Name = "Title1";
             title3.Text = "Восстановленный сигнал";
-            this.chart2.Titles.Add(title3);
+            this.chart_vosst.Titles.Add(title3);
             // 
             // tabControl2
             // 
@@ -341,7 +341,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_vosst)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_Kaiser)).EndInit();
@@ -372,7 +372,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Ham;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Black;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_vosst;
     }
 }
 

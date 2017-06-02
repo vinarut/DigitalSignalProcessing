@@ -17,12 +17,8 @@ namespace ЦОС_курсовая
             InitializeComponent();
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
-            chart2.ChartAreas[0].AxisX.Minimum = 0;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
 
-
-            for (int i = 0; i < x_t.Length; i++)
-                chart2.Series[0].Points.AddXY(i * T_d, x_t[i]);
 
             for (int i = 0; i < F_kvant.Length; i++)
                 chart1.Series[0].Points.AddXY(i * T_d, F_kvant[i]);
@@ -35,6 +31,7 @@ namespace ЦОС_курсовая
             Hw_triangle();
             Hw_Ham();
             Hw_Black();
+            vosst();
         }
 
         //=====================//
@@ -415,66 +412,47 @@ namespace ЦОС_курсовая
         }
         //=====================//
 
-        //=//Восстановление//==//
-        static double[] C = find_C((int)N_d);
-        static double[] Re;
-        static double[] Im;
-        static double[] find_C(int N)
+        //==//Восстановление//=//
+        void vosst()
         {
-            C = new double[N - 1];
-            Re = new double[C.Length];
-            Im = new double[C.Length];
-            double sum;
+            double[] C = new double[(int)((N_d - 1) / 2)];
+            double[] fi = new double[C.Length];
 
-            for(int i = 0; i < C.Length; i++)
+            double N = N_d - 1, Re, Im;
+
+            for (int i = 0; i < S_vyh.Length; i++)
             {
-                C[i] = 1 / (double)N;
-                sum = 0;
+                C[0] += S_vyh[i];
+                C[0] *= (1 / N);
+            }
 
-                for(int k = 0; k < C.Length; k++)
+            for (int i = 1; i < C.Length; i++)
+            {
+                Re = 0;
+                Im = 0;
+                for (int j = 0; j < S_vyh.Length; j++)
                 {
-                    Re[k] = Math.Cos(2 * Math.PI * i * k / N);
-                    Im[k] = Math.Sin(2 * Math.PI * i * k / N);
-
-                    sum += F_kvant[k] * (Re[k] - Im[k]);
+                    Re += S_vyh[j] * Math.Cos(2 * Math.PI * i * j / N);
+                    Im += S_vyh[j] * Math.Sin(2 * Math.PI * i * j / N);
                 }
-
-                C[i] *= sum;
+                Re *= (1 / N);
+                Im *= (1 / N);
+                C[i] = Math.Sqrt(Re * Re + Im * Im);
+                fi[i] = Math.Atan(Im / Re);
             }
 
-            return C;
-        }
-
-        static double[] x_t = find_xt((int)N_d);
-
-        static double[] find_xt(int N)
-        {
-            x_t = new double[N - 1];
-            double Ci;
-            double coef = 2;
-            int k = x_t.Length / 2 - 1;
-            x_t[0] = C[0];
-
-            for (int t = 1; t < x_t.Length / 2; t++)
+            chart_vosst.ChartAreas[0].AxisX.Minimum = 0;
+            double t = 1.0 / S_vyh.Length, S;
+            for (int i = 0; i < S_vyh.Length; i++)
             {
-
-                Ci = Math.Sqrt(Math.Pow(Re[t], 2) + Math.Pow(Im[t], 2));
-
-                if (x_t.Length - t > 1)
-                    x_t[t] = 2 * Ci * Math.Cos(coef * Math.PI * t / T + Math.Atan(Im[t] / Re[t]));
-                else
-                    x_t[t] = Ci * Math.Cos(coef * Math.PI * t / T + Math.Atan(Im[t] / Re[t]));
-
-                coef += 2;                
+                S = 0;
+                for (int j = 1; j < C.Length - 1; j++)
+                    S += 2 * C[j] * Math.Cos(2 * j * Math.PI * i * t + fi[j]);
+                S += C[0];
+                S += C[C.Length - 1] * Math.Cos((C.Length - 1) * Math.PI * i * t + fi[fi.Length - 1]);
+                chart_vosst.Series[0].Points.AddXY(i * t, S);
             }
 
-            for (int i = x_t.Length / 2; i < x_t.Length; i++)
-            {
-                x_t[i] = x_t[k];
-                k--;
-            }
-
-            return x_t;
         }
     }
 }
