@@ -15,6 +15,8 @@ namespace ЦОС_курсовая
         public Form1()
         {
             InitializeComponent();
+            InitializeLabels();
+
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
             chart3.ChartAreas[0].AxisX.Minimum = 0;
@@ -32,6 +34,22 @@ namespace ЦОС_курсовая
             Hw_Ham();
             Hw_Black();
             vosst();
+        }
+
+        private void InitializeLabels()
+        {
+            label_Fp.Text = "Fs = " + f_p + " Гц";
+            label_Fa.Text = "Fs = " + f_a + " Гц";
+            label_Ap.Text = "Ap = " + A_p + " дБ";
+            label_Aa.Text = "Aa = " + A_a + " дБ";
+
+            label_f1.Text = "f1 = " + f1 + " Гц";
+            label_f2.Text = "f2 = " + f2 + " Гц";
+            label_f3.Text = "f3 = " + f3 + " Гц";
+            label_f4.Text = "f4 = " + f4 + " Гц";
+            label_f5.Text = "f5 = " + f5 + " Гц";
+
+            label_Fs.Text = "Fs = " + Fs + " Гц";
         }
 
         //=====================//
