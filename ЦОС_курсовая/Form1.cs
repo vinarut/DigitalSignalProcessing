@@ -234,6 +234,7 @@ namespace ЦОС_курсовая
             double[] H = new double[f_p + 1];
             double Re, Im;
             chart_Kaiser.ChartAreas[0].AxisX.Minimum = 0;
+            chart_Kaiser.ChartAreas[0].AxisX.Maximum = f_p;
 
             for (double w = 0; w < f_p; w+=0.1)
             {
@@ -356,6 +357,7 @@ namespace ЦОС_курсовая
         {
             double[] h = find_h((int)M, triangle_win());
             chart_triangle.ChartAreas[0].AxisX.Minimum = 0;
+            chart_triangle.ChartAreas[0].AxisX.Maximum = f_p;
             double Re, Im;
 
             for (double w = 0; w < f_p; w += 0.1)
@@ -385,6 +387,7 @@ namespace ЦОС_курсовая
         {
             double[] h = find_h((int)M, Hamm_win());
             chart_Ham.ChartAreas[0].AxisX.Minimum = 0;
+            chart_Ham.ChartAreas[0].AxisX.Maximum = f_p;
             double Re, Im;
 
             for (double w = 0; w < f_p; w += 0.1)
@@ -413,6 +416,7 @@ namespace ЦОС_курсовая
         {
             double[] h = find_h((int)M, Black_win());
             chart_Black.ChartAreas[0].AxisX.Minimum = 0;
+            chart_Black.ChartAreas[0].AxisX.Maximum = f_p;
             double Re, Im;
 
             for (double w = 0; w < f_p; w += 0.1)
