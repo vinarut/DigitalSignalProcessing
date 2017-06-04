@@ -38,8 +38,8 @@ namespace ЦОС_курсовая
 
         private void InitializeLabels()
         {
-            label_Fp.Text = "Fs = " + f_p + " Гц";
-            label_Fa.Text = "Fs = " + f_a + " Гц";
+            label_Fp.Text = "Fp = " + f_p + " Гц";
+            label_Fa.Text = "Fa = " + f_a + " Гц";
             label_Ap.Text = "Ap = " + A_p + " дБ";
             label_Aa.Text = "Aa = " + A_a + " дБ";
 
