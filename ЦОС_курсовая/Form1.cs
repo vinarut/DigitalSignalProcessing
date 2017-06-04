@@ -50,6 +50,8 @@ namespace ЦОС_курсовая
             label_f5.Text = "f5 = " + f5 + " Гц";
 
             label_Fs.Text = "Fs = " + Fs + " Гц";
+            label_Td.Text = "Td = " + T_d * 1E3 + " мс";
+            label_delta_kvant.Text = "Δ = " + (delta_kvant * 1E3).ToString("0.000") + " мВ";
         }
 
         //=====================//
