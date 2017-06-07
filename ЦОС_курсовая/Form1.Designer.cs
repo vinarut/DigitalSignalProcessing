@@ -129,9 +129,6 @@
             // 
             // chart1
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
@@ -140,7 +137,7 @@
             series1.ChartArea = "ChartArea1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(388, 262);
+            this.chart1.Size = new System.Drawing.Size(386, 317);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -150,9 +147,6 @@
             // 
             // chart3
             // 
-            this.chart3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea2);
             this.chart3.Location = new System.Drawing.Point(0, 0);
@@ -161,7 +155,7 @@
             series2.ChartArea = "ChartArea1";
             series2.Name = "Series1";
             this.chart3.Series.Add(series2);
-            this.chart3.Size = new System.Drawing.Size(388, 262);
+            this.chart3.Size = new System.Drawing.Size(386, 317);
             this.chart3.TabIndex = 2;
             this.chart3.Text = "chart3";
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -171,6 +165,8 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage8);
@@ -181,7 +177,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(394, 281);
+            this.tabControl1.Size = new System.Drawing.Size(394, 343);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage9
@@ -194,16 +190,17 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(386, 255);
+            this.tabPage9.Size = new System.Drawing.Size(386, 317);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Данные";
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox4.Controls.Add(this.label_delta_kvant);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(184, 178);
+            this.groupBox4.Location = new System.Drawing.Point(184, 240);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -244,12 +241,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.label_Td);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label_Fs);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox3.Location = new System.Drawing.Point(8, 177);
+            this.groupBox3.Location = new System.Drawing.Point(8, 239);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -300,6 +298,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.label_f5);
             this.groupBox2.Controls.Add(this.label_f4);
             this.groupBox2.Controls.Add(this.label_f3);
@@ -310,7 +310,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(145, 163);
+            this.groupBox2.Size = new System.Drawing.Size(145, 225);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Частоты составляющих тестового сигнала";
@@ -367,6 +367,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label_Aa);
             this.groupBox1.Controls.Add(this.label3);
@@ -380,7 +382,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(223, 163);
+            this.groupBox1.Size = new System.Drawing.Size(223, 225);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики фильтра";
@@ -472,7 +474,7 @@
             this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage8.Size = new System.Drawing.Size(386, 255);
+            this.tabPage8.Size = new System.Drawing.Size(386, 317);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Аналоговый сигнал";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -488,7 +490,7 @@
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Name = "Series1";
             this.chart_analog.Series.Add(series3);
-            this.chart_analog.Size = new System.Drawing.Size(388, 262);
+            this.chart_analog.Size = new System.Drawing.Size(386, 317);
             this.chart_analog.TabIndex = 1;
             this.chart_analog.Text = "chart2";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -503,7 +505,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(386, 255);
+            this.tabPage1.Size = new System.Drawing.Size(386, 317);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Цифровой сигнал";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -515,7 +517,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(386, 255);
+            this.tabPage2.Size = new System.Drawing.Size(386, 317);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Сигнал, обработанный фильтром";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -527,7 +529,7 @@
             this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage7.Size = new System.Drawing.Size(386, 255);
+            this.tabPage7.Size = new System.Drawing.Size(386, 317);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Восстановленный сигнал";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -543,7 +545,7 @@
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series4.Name = "Series1";
             this.chart_vosst.Series.Add(series4);
-            this.chart_vosst.Size = new System.Drawing.Size(388, 262);
+            this.chart_vosst.Size = new System.Drawing.Size(386, 317);
             this.chart_vosst.TabIndex = 0;
             this.chart_vosst.Text = "chart2";
             title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -553,6 +555,9 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
@@ -561,7 +566,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(388, 281);
+            this.tabControl2.Size = new System.Drawing.Size(469, 343);
             this.tabControl2.TabIndex = 5;
             // 
             // tabPage3
@@ -581,6 +586,11 @@
             this.chart_Kaiser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea5.AxisX.Title = "Гц";
+            chartArea5.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea5.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea5.AxisY.Title = "мВ";
+            chartArea5.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea5.Name = "ChartArea1";
             this.chart_Kaiser.ChartAreas.Add(chartArea5);
             this.chart_Kaiser.Location = new System.Drawing.Point(0, 0);
@@ -590,7 +600,7 @@
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series5.Name = "Series1";
             this.chart_Kaiser.Series.Add(series5);
-            this.chart_Kaiser.Size = new System.Drawing.Size(386, 262);
+            this.chart_Kaiser.Size = new System.Drawing.Size(380, 255);
             this.chart_Kaiser.TabIndex = 0;
             this.chart_Kaiser.Text = "chart2";
             title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -615,6 +625,11 @@
             this.chart_triangle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea6.AxisX.Title = "Гц";
+            chartArea6.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea6.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea6.AxisY.Title = "мВ";
+            chartArea6.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea6.Name = "ChartArea1";
             this.chart_triangle.ChartAreas.Add(chartArea6);
             this.chart_triangle.Location = new System.Drawing.Point(0, 0);
@@ -624,7 +639,7 @@
             series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series6.Name = "Series1";
             this.chart_triangle.Series.Add(series6);
-            this.chart_triangle.Size = new System.Drawing.Size(386, 262);
+            this.chart_triangle.Size = new System.Drawing.Size(380, 255);
             this.chart_triangle.TabIndex = 2;
             this.chart_triangle.Text = "chart4";
             title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -649,16 +664,21 @@
             this.chart_Ham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea7.AxisX.Title = "Гц";
+            chartArea7.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea7.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea7.AxisY.Title = "мВ";
+            chartArea7.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea7.Name = "ChartArea1";
             this.chart_Ham.ChartAreas.Add(chartArea7);
-            this.chart_Ham.Location = new System.Drawing.Point(-2, 0);
+            this.chart_Ham.Location = new System.Drawing.Point(0, 0);
             this.chart_Ham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart_Ham.Name = "chart_Ham";
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series7.Name = "Series1";
             this.chart_Ham.Series.Add(series7);
-            this.chart_Ham.Size = new System.Drawing.Size(386, 262);
+            this.chart_Ham.Size = new System.Drawing.Size(380, 255);
             this.chart_Ham.TabIndex = 3;
             this.chart_Ham.Text = "chart5";
             title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -673,7 +693,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage6.Size = new System.Drawing.Size(380, 255);
+            this.tabPage6.Size = new System.Drawing.Size(461, 317);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Окно Блэкмана";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -683,16 +703,21 @@
             this.chart_Black.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea8.AxisX.Title = "Гц";
+            chartArea8.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea8.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea8.AxisY.Title = "мВ";
+            chartArea8.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea8.Name = "ChartArea1";
             this.chart_Black.ChartAreas.Add(chartArea8);
-            this.chart_Black.Location = new System.Drawing.Point(-2, 0);
+            this.chart_Black.Location = new System.Drawing.Point(0, 0);
             this.chart_Black.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart_Black.Name = "chart_Black";
             series8.ChartArea = "ChartArea1";
             series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series8.Name = "Series1";
             this.chart_Black.Series.Add(series8);
-            this.chart_Black.Size = new System.Drawing.Size(386, 262);
+            this.chart_Black.Size = new System.Drawing.Size(461, 317);
             this.chart_Black.TabIndex = 3;
             this.chart_Black.Text = "chart6";
             title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -705,13 +730,15 @@
             this.tabPage10.Controls.Add(this.dataGridView1);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(386, 255);
+            this.tabPage10.Size = new System.Drawing.Size(386, 317);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "Коэффициенты фильтра";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -731,6 +758,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -740,19 +768,19 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(386, 255);
+            this.dataGridView1.Size = new System.Drawing.Size(386, 317);
             this.dataGridView1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 300);
+            this.ClientSize = new System.Drawing.Size(884, 362);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(544, 336);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "Form1";
             this.Text = "Обработка сигнала цифровым фильтром";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

@@ -69,36 +69,36 @@ namespace ЦОС_курсовая
             for (int i = 0; i < h.Length; i++)
             {
                 dataGridView1[0, i].Value = i + 1;
-                dataGridView1[1, i].Value = h[i];
+                dataGridView1[1, i].Value = h[i].ToString("0.0000");
             }
         }
 
         //=====================//
         // Вариант 1
         //=====================//
-        //static int f_p = 5; // Гц
-        //static int f_a = 8; // Гц
-        //static int A_p = 1;  // дБ
-        //static int A_a = 30; // дБ 
+        static int f_p = 5; // Гц
+        static int f_a = 8; // Гц
+        static int A_p = 1;  // дБ
+        static int A_a = 30; // дБ 
         //=====================//
-        //static int f1 = 1;  // Гц
-        //static int f2 = 5; // Гц
-        //static int f3 = 7; // Гц
-        //static int f4 = 8; // Гц
-        //static int f5 = 30; // Гц
+        static int f1 = 1;  // Гц
+        static int f2 = 5; // Гц
+        static int f3 = 7; // Гц
+        static int f4 = 8; // Гц
+        static int f5 = 30; // Гц
         //=====================//
         // Вариант 5
         //=====================//
-        static int f_p = 25; // Гц
-        static int f_a = 40; // Гц
-        static int A_p = 1;  // дБ
-        static int A_a = 30; // дБ
-        //=====================//
-        static int f1 = 1;  // Гц
-        static int f2 = 25; // Гц
-        static int f3 = 30; // Гц
-        static int f4 = 40; // Гц
-        static int f5 = 60; // Гц
+        //static int f_p = 25; // Гц
+        //static int f_a = 40; // Гц
+        //static int A_p = 1;  // дБ
+        //static int A_a = 30; // дБ
+        ////=====================//
+        //static int f1 = 1;  // Гц
+        //static int f2 = 25; // Гц
+        //static int f3 = 30; // Гц
+        //static int f4 = 40; // Гц
+        //static int f5 = 60; // Гц
         //=====================//
         //=====================//
         // Вариант 13
