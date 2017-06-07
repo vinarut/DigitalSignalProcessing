@@ -16,6 +16,7 @@ namespace ЦОС_курсовая
         {
             InitializeComponent();
             InitializeLabels();
+            dataGridCoeffFiltr();
 
             chart1.ChartAreas[0].AxisX.Minimum = 0;
             //chart1.ChartAreas[0].AxisX.Maximum = 1;
@@ -52,6 +53,24 @@ namespace ЦОС_курсовая
             label_Fs.Text = "Fs = " + Fs + " Гц";
             label_Td.Text = "Td = " + T_d * 1E3 + " мс";
             label_delta_kvant.Text = "Δ = " + (delta_kvant * 1E3).ToString("0.000") + " мВ";
+        }
+
+        private void dataGridCoeffFiltr()
+        {
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+            dataGridView1.RowCount = h.Length;
+
+            dataGridView1.Columns[0].HeaderText = "№";
+            dataGridView1.Columns.Add("coef", "Коэффициенты");
+            dataGridView1.Columns[1].Width = 265;
+
+            for (int i = 0; i < h.Length; i++)
+            {
+                dataGridView1[0, i].Value = i + 1;
+                dataGridView1[1, i].Value = h[i];
+            }
         }
 
         //=====================//
